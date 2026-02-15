@@ -1,0 +1,13 @@
+
+> tifa@0.1.0 dev /home/wassim/tifa/tifa
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.121:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 899ms
+○ Compiling / ...
+ GET / 200 in 5.7s (compile: 5.4s, render: 280ms)
