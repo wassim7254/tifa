@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const UserShema = new mongoose.Schema(
     {
-        _id: {type: string, required: true},
-        _name: {type: string, required: true},
-        _email: {type: string, required: true},
-        _image: {type: string, required: false},
+        _id: {type: String, required: true},
+        _name: {type: String, required: true},
+        _email: {type: String, required: true},
+        _image: {type: String, required: false},
     },
     {timestamps: true}
 );

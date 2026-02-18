@@ -76,7 +76,7 @@ const Sidebar = ({ expand, setExpand }) => {
           />
 
           {!expand && (
-            <div className="absolute left-full ml-2 bg-black text-white text-xs rounded p-1 opacity-0 group-hover:opacity-75 transition whitespace-nowrap">
+            <div className="absolute left-full ml-2 bg-black text-white text-xs rounded p-1 opacity-0 group-hover:opacity-75 transition whitespace-nowrap text-">av
               New chat
               <div className="w-3 h-3 absolute bg-black rotate-45 left-[-4px] top-1/2 -translate-y-1/2" />
             </div>
@@ -84,7 +84,7 @@ const Sidebar = ({ expand, setExpand }) => {
 
           {expand && (
             <p className="text-white text font-bold">
-              New chat
+              <br /> New chat
             </p>
           )}
         </button>

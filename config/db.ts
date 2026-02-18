@@ -1,33 +1,40 @@
-import mongoose from "mongoose"; // 1. تصحيح mport إلى import
+import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// التأكد من أن الرابط موجود في ملف .env
 if (!MONGODB_URI) {
     throw new Error("Please define the MONGODB_URI environment variable inside .env");
 }
-console.log("wassim")
-// تخزين الاتصال في المتغير العام لتجنب تكرار الاتصال عند تحديث الكود
-let cached = global.mongoose;
+
+// Hada ghir WASF (Description) bach TS yfhm chno hya cached. 
+// Machi logic zayed, darouri bach t7iyed l'error.
+interface CachedConnection {
+    conn: typeof mongoose | null;
+    promise: Promise<typeof mongoose> | null;
+}
+
+declare global {
+    var mongoose: CachedConnection | undefined;
+}
+
+let cached: CachedConnection = global.mongoose as CachedConnection;
 
 if (!cached) {
     cached = global.mongoose = { conn: null, promise: null };
 }
 
 async function connectDB() {
-    // إذا كان هناك اتصال مسبق، استخدمه
     if (cached.conn) {
         return cached.conn;
     }
 
-    // إذا لم يكن هناك اتصال جارٍ، قم بإنشاء واحد جديد
+    // Daba TypeScript 3arf bli cached fiha promise
     if (!cached.promise) {
         const opts = {
             bufferCommands: false,
         };
 
-        // 2. تصحيح الأقواس: () بدلاً من {}
-        cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+        cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
             return mongoose;
         });
     }
