@@ -4,7 +4,7 @@ import { NextResponse, NextRequest } from "next/server"; // 1. Added NextRequest
 import connectDB from "@/config/db";
 import User from "@/models/User";
 
-// 2. Define the structure of the Clerk Webhook Event for better type safety
+
 interface ClerkWebhookEvent {
   data: {
     id: string;

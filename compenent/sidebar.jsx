@@ -84,7 +84,7 @@ const Sidebar = ({ expand, setExpand }) => {
 
           {expand && (
             <p className="text-white text font-bold">
-              <br /> New chat
+              New chat
             </p>
           )}
         </button>
