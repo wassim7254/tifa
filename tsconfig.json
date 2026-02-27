@@ -37,7 +37,7 @@
   ".next/dev/types/**/*.ts",
   "**/*.mts",
   "assets/assets"
-, "compenent/sidebar.jsx"],
+, "compenent/sidebar.tsx", "compenent/Message.jsx"],
   "exclude": [
     "node_modules"
   ]
